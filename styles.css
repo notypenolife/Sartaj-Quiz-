@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #D1BB9E;
+    --secondary-color: #AF8F6F;
+    --accent-color: #795757;
+    --text-color: #4A4947;
+    --button-color: #FFF2E1;
+    --white: #6C4E31;
+    --transition-time: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#quiz {
+    background-color: var(--primary-color);
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 40px;
+    box-shadow: 5px 7px 5px 5px rgba(0,26,51,0.5);
+    padding: 30px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 40px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#tracker {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.num {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    margin: 0 5px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1.5px solid var(--white);
+    transition: background-color var(--transition-time) ease;
+}
+
+.num.completed {
+    background-color: #b3b3b3;
+}
+
+.num.active {
+    background-color: #cc7a00;
+}
+
+hr {
+    border: 2px solid var(--button-color);
+    margin: 20px 0;
+}
+
+#question {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    background-color: var(--button-color);
+    width: 100%;
+    max-width: 300px;
+    border: 1.5px solid var(--secondary-color);
+    border-radius: 75px;
+    margin: 10px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.button.selected {
+    background-color: var(--secondary-color);
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+
+.nav-button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    width: 200px;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 24px;
+    font-weight: 900;
+    border: 1px solid var(--accent-color);
+    text-align: center;
+    box-shadow: 2px 2px 0px 0px rgba(191, 191, 191, 0.5);
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.nav-button:hover {
+    background-color: var(--accent-color);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#progress, #timer {
+    font-size: 20px;
+    color: var(--white);
+}
+
+#result {
+    text-align: center;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes swipeLeft {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes swipeIn {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.swipe-left {
+    animation: swipeLeft 0.5s ease-out forwards;
+}
+
+.swipe-in {
+    animation: swipeIn 0.5s ease-out forwards;
+}
+
+@media (max-width: 600px) {
+    #quiz {
+        width: 95%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    #question {
+        font-size: 22px;
+    }
+    .button, .nav-button {
+        font-size: 16px;
+    }
+    #progress, #timer {
+        font-size: 16px;
+    }
+}
+
+.transition {
+    transition: all var(--transition-time) ease;
+}
+
+#congrats {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuckTrends Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz">
+        <header>
+            <h1>TuckTrends</h1>
+        </header>
+
+        <div id="tracker"></div>
+        <div id="congrats"></div>
+
+        <hr>
+
+        <div id="quizset" class="quiz-content">
+            <p id="question"></p>
+            <div id="options" class="options">
+                <button id="option1" class="button"></button>
+                <button id="option2" class="button"></button>
+            </div>
+            <button id="next" class="nav-button">Next</button>
+        </div>
+
+        <div id="resultbox" class="hidden">
+            <p id="result"></p>
+            <button id="retake" class="nav-button">Retake Quiz</button>
+        </div>
+
+        <footer>
+            <p id="progress"></p>
+        </footer>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
